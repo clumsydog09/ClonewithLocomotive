@@ -17,8 +17,19 @@ body {
     justify-content: space-between;
 }
 
+#cursor{
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 99999;
+}
+
 #main {
     width: 100%;
+    background-color: black;
     color: #fff;
     text-transform: uppercase;
 }
@@ -35,6 +46,7 @@ body {
 }
 
 #landing {
+    position: relative;
     width: 100%;
     height: 100vh;
     background-color: #000;
@@ -78,11 +90,12 @@ body {
 #landingFooter {
     /* justify-content: center; */
     width: 100%;
-    position:absolute;
+    position: absolute;
     bottom: 3%;
     padding: 0 40px;
 }
-#landingFooter a{
+
+#landingFooter a {
     color: #fff;
     text-decoration: none;
 
@@ -98,6 +111,114 @@ body {
     background-color: rgba(255, 255, 255, 0.6);
 }
 
-#iconset{
+#iconset {
     gap: 5px;
+}
+
+#second {
+    background-color: black;
+    padding-top: 200px;
+    width: 100%;
+    height: 150vh;
+    padding-right: 10vw;
+    padding-left: 2.5vw;
+    color: #a3a3a3;
+}
+
+.elem {
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #888;
+    padding: 3.5vw 0vw;
+    font-size: 3.5vw;
+    letter-spacing: 3px;
+}
+
+.elem>h6 {
+    font-size: 1vw;
+    color: white;
+}
+
+#second :nth-child(3) {
+    border-bottom: 1px solid #888;
+}
+
+.elem>img {
+    display: none;
+    z-index: 999;
+    position: absolute;
+    height: 140%;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    padding: 10vw 6vw;
+    gap: 50px;
+    padding-left: 50vw;
+}
+
+#about>img {
+    width: 200px;
+}
+
+#textabout {
+    width: 30rem;
+}
+
+#textabout>h5 {
+    color: #a3a3a3;
+    margin-bottom: 5px;
+}
+
+#textabout>p {
+    text-transform: none;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+#textabout>a {
+    text-transform: none;
+    font-size: 12px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 100px;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+#subscribe {
+    background-color: black;
+    color: white;
+    padding: 20px 40px;
+    padding-bottom: 7vw;
+}
+
+#subscribe>h5:nth-child(1) {
+    color: #a3a3a3;
+    margin-bottom: 5px;
+}
+
+#footer {
+    padding: 20px 40px;
+    background-color: black;
+    font-size: small;
+}
+
+#footerleft {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#footerright {
+    display: flex;
+    gap: 30px;
+}
+
+#footerright>a {
+    color: white;
+    text-decoration: none;
 }
