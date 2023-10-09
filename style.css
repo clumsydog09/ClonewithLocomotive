@@ -11,13 +11,29 @@ body {
     height: 100%;
 }
 
+.elemhover{
+    transition: 1s;
+    transform: translateX(10);
+    opacity: 0.8;
+}
+
 .spaceBetween {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-#cursor{
+.bounding {
+    width: fit-content;
+    /* background-color: rgba(255, 75, 75, 0.7); */
+    overflow: hidden;
+}
+
+.boundingelem {
+    transform: translateY(100%);
+}
+
+#cursor {
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
     background-color: #fff;
     width: 10px;
@@ -78,7 +94,10 @@ body {
 #smallHeadings {
     text-transform: uppercase;
     margin-top: 100px;
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
     padding-right: 40px;
 }
 
