@@ -50,12 +50,56 @@ function skewCursor() {
     });
 }
 
-let elem = document.querySelectorAll('.elem');
-for (let i=0; i < 3; i++) {
-    elem[i].addEventListener('mousemove', function () {
-        elem[i].classList.toggle("elemhover");
-    })
-}
+// document.querySelectorAll(".elem").forEach(function (elem) {
+//     let diff = 0;
+//     let rotate = 0;
+//     elem.addEventListener("mousemove", function (dets) {
+//         diff = dets.c1ientX - rotate;
+//         rotate = dets.c1ientX;
+
+//         let diffY = dets.clientY - elem.getBoundingClientRect().top;
+//         let diffX = dets.clientX - elem.getBoundingClientRect().left;
+
+//         gsap.to(elem.querySelector("img"), {
+//             opacity: 1,
+//             ease: Power3,
+//             top: diffY,
+//             left: diffX,
+//             rotate: gsap.utils.clamp(-20, 20, diff),
+//         });
+//     });
+//     elem.addEventListener("mouseleave", function (dets) {
+//         gsap.to(elem.querySelector("img"), {
+//             opacity: 0,
+//             ease: Power1,
+//         });
+//     });
+// });
+
+document.querySelectorAll(".elem").forEach(function (elem) {
+    let rotate = 0;
+    let diff = 0;
+
+    elem.addEventListener("mouseleave", function () {
+        gsap.to(elem.querySelector("img"), {
+            opacity: 0,
+        });
+    });
+
+    elem.addEventListener("mousemove", function (dets) {
+        let diffY = dets.clientY - elem.getBoundingClientRect().top;
+        let diffX = dets.clientX - elem.getBoundingClientRect().left;
+        diff = dets.clientX - rotate;
+        rotate = dets.clientX;
+        gsap.to(elem.querySelector("img"), {
+            opacity: 1,
+            ease: Power3,
+            top: diffY,
+            left: diffX,
+            rotate: gsap.utils.clamp(-20, 20, diff),
+        });
+    });
+});
 
 cursorFollower();
 firstPageAnimation();
